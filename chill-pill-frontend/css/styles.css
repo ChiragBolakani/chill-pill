@@ -1,0 +1,322 @@
+:root {
+    /* prettier-ignore */
+    --dim-green-glow: 
+      0px 0px 1px hsl(120, 100%, 80%),
+      0px 0px 10px green;
+    /* prettier-ignore */
+    --green-glow-drop-shadow: 
+      drop-shadow(0px 0px 2px hsl(120, 100%, 80%))
+      drop-shadow(0px 0px 8px green);
+    /* prettier-ignore */
+    --green-glow-small: 
+      0px 0px 1px hsl(120, 100%, 80%), 
+      0px 0px 2px hsl(120, 100%, 80%),
+      0px 0px 10px green;
+    /* prettier-ignore */
+    --green-glow: 
+      0px 0px 2px hsl(120, 100%, 80%),
+      0px 0px 15px green,
+      0px 0px 60px green;
+    /* prettier-ignore */
+    --red-glow: 
+      0px 0px 1px hsl(0, 100%, 80%), 
+      0px 0px 2px hsl(0, 100%, 80%),
+      0px 0px 15px hsl(0, 100%, 50%), 
+      0px 0px 60px red;
+    /* prettier-ignore */
+    --blue-glow:
+      0px 0px 1px hsl(192, 100%, 80%), 
+      0px 0px 16px hsl(244, 90%, 49%),
+      0px 0px 30px hsl(244, 100%, 50%),
+      0px 0px 60px white;
+  }
+
+html {
+    min-height: 100%;
+}
+
+body{
+    font-family: "VT323", monospace;
+    background: url("https://media1.tenor.com/m/G8Bgyj10assAAAAC/lofi.gif") no-repeat center center fixed; 
+    background-size: cover;
+    cursor: url(../images/cursors/cursor.svg), auto;
+    height: 100dvh;
+    margin: 0;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+h1, h2, h3, span, a, button, select, label, input {
+  /* color: rgb(77, 206, 193); */
+  color: rgb(51, 255, 221);
+  text-shadow: var(--blue-glow);
+  line-height: 1;
+  /* transform: translateZ(100px); */
+  backface-visibility: hidden;
+}
+
+button,
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  background: transparent;
+  border: none;
+  text-align: left;
+}
+
+button, select, .pointer {
+  cursor: url(../images/cursors/pointer.svg), pointer !important;
+}
+
+a{
+  text-decoration: none;
+}
+
+.shadow {
+  filter: var(--green-glow-drop-shadow);
+}
+
+.green-box-small {
+  color: rgb(235, 235, 235);
+  box-shadow: var(--green-glow-small);
+  /* transform: translateZ(100px); */
+  backface-visibility: hidden;
+}
+
+.red {
+  color: rgb(235, 235, 235);
+  text-shadow: var(--red-glow);
+  /* transform: translateZ(100px); */
+  backface-visibility: hidden;
+}
+
+#body-container{
+    /* margin: 5px; */
+    /* padding: 10px; */
+    animation: crtAnimation 1.2s 0.2s both;
+    animation-timing-function: cubic-bezier(0.2, -0.1, 0, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    /* z-index: 11; */
+    position: fixed;
+    /* width: 100%; */
+    /* height: 100%; */
+    padding: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#top-ui{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content:space-between;
+}
+
+#info{
+  display: flex;
+  flex-direction: column;
+}
+
+#nav-vertical{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#nav-horizontal{
+  display: flex;
+  align-items: flex-end;
+}
+
+/* #about-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding: 15px 0;
+}.collapse{
+  animation: slidein 3s;
+}.expanded{
+  animation: slideout 3s;
+} */
+
+#about-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  opacity: 0;
+  transition:all 1s ease-in-out;
+}
+
+#about-container.show{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding: 15px 0;
+  height: 100%;
+  opacity: 1;
+  transition:all 1s ease-in-out;
+}
+
+/* #about-container .collapse{
+  animation: slidein 3s;
+} */
+
+.about-container-item{
+ margin-bottom: 10px;
+ /* overflow: hidden; */
+}
+
+#self-image-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#self-image{
+  height: 100px;
+  width: 100px;
+}
+
+#say-hi{
+  text-decoration: underline;
+}
+
+#beats-image{
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+#player-div-vertical{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.player-div-horizontal{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+}
+
+.player-ui-icon{
+  height: 20px;
+  width: 20px;
+}
+
+#volume-container{
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.volume-bar{
+  width: 6px;
+  height: 17px;
+  margin-right: 7px;
+  background: white;
+  display: inline-block;
+  opacity: 0.4;
+}
+
+h2{
+    text-shadow: var(--blue-glow);
+    /* color: aqua; */
+    margin: 0;
+    /* z-index: 13; */
+}
+
+@keyframes crtAnimation {
+    0% {
+      transform: scaleY(0) scaleX(0);
+      filter: brightness(15) blur(0px);
+    }
+    20% {
+      transform: scaleY(0.02) scaleX(0.8);
+      filter: brightness(15) blur(0px);
+    }
+}
+
+@keyframes moveDownAnimation {
+  100% {
+    background-position-y: 100%;
+  }
+}
+
+@keyframes slidein {
+  from {
+    position: fixed;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    position: fixed;
+    transform: translateY(10%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideout {
+  from {
+    position: fixed;
+    transform: translateY(10%);
+    opacity: 1;
+  }
+
+  to {
+    position: fixed;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+#crt-lines {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../images/lines.jpg);
+    /* z-index: 10; */
+    background-size: 7px auto;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    opacity: 0.4;
+    animation: moveDownAnimation 150s linear infinite;
+    height: 100%;
+    /* width: 100%;  */
+}
+
+#crt-transition-effect{
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  display: none;
+  background: url("../images/crt_transitions/static1.gif") no-repeat center center fixed;
+  background-size: cover;
+}
+
+@media(max-width: 500px){
+
+}
