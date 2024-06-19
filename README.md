@@ -1,5 +1,5 @@
 # Chill-Pill
-Demo Link - http://13.233.255.18:8003/
+Demo Link - http://ec2-13-233-255-18.ap-south-1.compute.amazonaws.com:8003/
 
 Music streaming app written in Javascript with 0 external dependencies. 
 - Music streaming app written in Javascript with no external dependencies.  
