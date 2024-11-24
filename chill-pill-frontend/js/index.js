@@ -23,7 +23,7 @@ document.addEventListener('dblclick', (e)=>{
     document.body.style.backgroundSize="cover"
 
     const song = songData.songs[Math.floor(Math.random() * songData.songs.length)];
-    audioElement.src =  new URL("http://13.233.255.18:8002/" + song.url)
+    audioElement.src =  new URL("https://raw.githubusercontent.com/ChiragBolakani/chill-pill-backend/refs/heads/main/public/songs/" + song.url)
     audioElement.title = song.name 
     song_status.innerText= audioElement.title
     audioElement.play()
